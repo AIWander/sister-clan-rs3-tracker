@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clan Hall — sister-clan-rs3-tracker</title>
+  <meta name="description" content="Discord bot for an RS3 clan. One-click zip download. Not an official Jagex product." />
+  <style>
+    :root { color-scheme: dark; --bg:#14110c; --card:#1c1812; --gold:#c6a15b; --ink:#f3ead7; --muted:#b7a88c; --line:#3a3226; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Georgia, "Times New Roman", serif; background: radial-gradient(1200px 600px at 20% -10%, #2a2318, var(--bg)); color: var(--ink); line-height: 1.5; }
+    main { max-width: 40rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    p.kicker { letter-spacing: .18em; text-transform: uppercase; font-size: .72rem; color: var(--gold); font-family: system-ui, sans-serif; }
+    h1 { font-size: 2.4rem; margin: .2rem 0 .6rem; font-weight: 600; }
+    .muted { color: var(--muted); }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.2rem; margin: 1.1rem 0; }
+    a.btn { display: inline-block; background: var(--gold); color: #1a140c; text-decoration: none; font-family: system-ui, sans-serif; font-weight: 650; padding: .7rem 1rem; border-radius: 10px; margin: .25rem .4rem .25rem 0; }
+    a.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+    ol { padding-left: 1.2rem; }
+    li { margin: .45rem 0; }
+    code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; background: #0003; padding: .1em .35em; border-radius: 4px; }
+    footer { margin-top: 2rem; font-size: .9rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">Sister clan · RS3</p>
+    <h1>Clan Hall</h1>
+    <p class="muted">Discord bot for live Jagex roster, XP snapshots, citadel cap self-report, and a promotion shortlist. No AI needed after you open this page.</p>
+    <p><strong>Not an official Jagex product.</strong> Officers still change ranks in Clan Settings by hand.</p>
+
+    <p>
+      <a class="btn" href="https://github.com/AIWander/sister-clan-rs3-tracker/archive/refs/heads/main.zip">Download ZIP</a>
+      <a class="btn ghost" href="https://github.com/AIWander/sister-clan-rs3-tracker">Source on GitHub</a>
+    </p>
+
+    <div class="card">
+      <h2>Load it</h2>
+      <ol>
+        <li>Click <strong>Download ZIP</strong> above. Unzip to <code>Documents\sister-clan-rs3-tracker</code>.</li>
+        <li>Install <a href="https://nodejs.org">Node.js LTS</a> (big green button).</li>
+        <li>Create a Discord app — clicks are in <code>START-HERE.txt</code> inside the zip.</li>
+        <li>Double-click <code>setup.bat</code>, then <code>start.bat</code>. Leave that window open.</li>
+        <li>In Discord: <code>/setup clan:YourExactInGameClanName</code></li>
+      </ol>
+      <p class="muted">Closing start.bat or sleeping the PC takes the bot offline. That is normal.</p>
+    </div>
+
+    <div class="card">
+      <h2>One-file installer</h2>
+      <p>PowerShell, after Node.js is installed:</p>
+      <p><code>irm https://raw.githubusercontent.com/AIWander/sister-clan-rs3-tracker/main/install.ps1 | iex</code></p>
+    </div>
+
+    <footer>
+      Uses only public Jagex endpoints. Polite rate limits. Secrets stay in <code>.env</code> on her PC — never in this repo.
+    </footer>
+  </main>
+</body>
+</html>

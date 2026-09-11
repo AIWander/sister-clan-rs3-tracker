@@ -1,0 +1,85 @@
+Clan Hall — sister-clan-rs3-tracker
+===================================
+
+This is a Discord bot for your RS3 clan. It is NOT an official Jagex product.
+It cannot change in-game ranks. Officers still promote people in Clan Settings.
+
+You need: a Windows PC, the clan Discord (you must be able to invite a bot),
+and about 15 minutes.
+
+------------------------------------------------
+A. One-time: install Node.js
+------------------------------------------------
+1. Open https://nodejs.org
+2. Download the LTS installer (the big green button).
+3. Run it. Leave the defaults. Make sure "Add to PATH" is checked.
+4. Restart the computer if it asks.
+
+------------------------------------------------
+B. One-time: create the Discord bot
+------------------------------------------------
+1. Open https://discord.com/developers/applications  (log in with YOUR Discord)
+2. New Application. Name it something like "Clan Hall". Create.
+3. Left sidebar → Bot → Add Bot (if it asks) → Reset Token → Copy.
+   Paste that into a notepad for a minute. This is DISCORD_TOKEN.
+   Never post the token in chat.
+4. Left sidebar → General Information → copy Application ID. This is CLIENT_ID.
+5. Left sidebar → OAuth2 → URL Generator
+     Scopes: tick  applications.commands  AND  bot
+     Bot Permissions: tick  Send Messages  AND  Embed Links
+   Copy the generated URL at the bottom, paste it in a browser, pick the
+   clan Discord server, Authorize.
+6. In Discord: User Settings → Advanced → turn Developer Mode ON.
+   Right-click the clan server name → Copy Server ID. This is GUILD_ID.
+
+------------------------------------------------
+C. Unzip this folder
+------------------------------------------------
+Put the unzipped folder somewhere easy, like Documents\sister-clan-rs3-tracker
+Do not run it from inside the zip. Do not delete the folder after setup.
+
+------------------------------------------------
+D. Fill in secrets, then double-click setup
+------------------------------------------------
+1. Open .env.example in Notepad.
+2. File → Save As → name it exactly  .env  (not .env.txt)
+   If Windows hides extensions, enable View → File name extensions first.
+3. Paste DISCORD_TOKEN, CLIENT_ID, GUILD_ID, and your in-game clan name.
+   Save.
+4. Double-click  setup.bat
+   Wait until it says setup worked. If it errors, screenshot the window
+   and send it to your brother — do not keep guessing.
+
+------------------------------------------------
+E. Start the bot every time you want it online
+------------------------------------------------
+Double-click  start.bat
+Leave that black window open. Closing it (or sleeping the PC) takes the
+bot offline. Members will see slash commands in Discord once it is running.
+
+------------------------------------------------
+F. First command in Discord
+------------------------------------------------
+In any channel the bot can see, type:
+
+  /setup clan:YourExactClanName
+
+Use the in-game clan name, not the Discord server name.
+Then try /roster and /stats. Members should /link rsn:TheirName.
+
+Tell the clan: set RuneMetrics + Adventure Log to public if they want
+combat from RuneMetrics. Cap tracking is self-report either way (/cap).
+
+Officers: /promos is only a shortlist. Rank people in-game, then
+/promo-applied rsn:TheirName so they drop off the list.
+
+Citadel reset time is in config.json (default Sunday 00:00 UTC).
+Change that to your real tick before you trust /cappers.
+
+------------------------------------------------
+If something breaks
+------------------------------------------------
+- "Need DISCORD_TOKEN..." → .env is missing or in the wrong folder
+- Commands do not appear → run setup.bat again, then start.bat, wait 1 minute
+- Bot offline → start.bat is not running, or the PC slept
+- npm / better-sqlite3 errors → screenshot setup.bat and send it to your brother
