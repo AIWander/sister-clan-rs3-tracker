@@ -1,0 +1,15 @@
+{
+  "min_week_xp": 1000000,
+  "min_caps_this_month": 2,
+  "tick_weekday": 0,
+  "tick_hour": 0,
+  "tick_minute": 0,
+  "officer_role_names": [
+    "Owner",
+    "Deputy Owner",
+    "Overseer",
+    "Coordinator",
+    "Admin",
+    "Officer"
+  ]
+}
